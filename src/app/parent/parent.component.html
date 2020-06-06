@@ -1,0 +1,11 @@
+<p>parent works!</p>
+<!--step 2 use child directive and write attribute and apply property binding-->
+<app-child [dataFromParent]='employee' (childEvent)='dataFromChild=$event'></app-child>
+
+<label>@output</label>
+<ul>
+    <li>{{dataFromChild.name}}</li>
+    <li>{{dataFromChild.gender}}</li>
+    <li>{{dataFromChild.marks}}</li>
+    <li>{{dataFromChild.course}}</li>
+</ul>
