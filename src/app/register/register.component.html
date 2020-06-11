@@ -1,0 +1,31 @@
+<div class="card col-md-4 offset-md-4 mt-4">
+    <form [formGroup]='regGroup' (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="username">username</label>
+            <input type="text" name="username" placeholder="Ente the name" class="form-control" formControlName='username' [ngClass]="{'is-invalid': submitted && f.username.errors}"></div>
+        <div *ngIf="submitted && f.username.errors">
+            <div style="color:red" *ngIf="f.username.errors.required">username is required</div>
+            <div style="color:red" *ngIf="f.username.errors.minlength">username atleast 5 chars</div>
+        </div>
+        <div class=" form-group ">
+            <label for="exampleInputPassword1 ">Password</label>
+            <input type="password " class="form-control " placeholder="Password " name="password " formControlName='password' [ngClass]="{ 'is-invalid' :submitted && f.password.errors} ">
+            <div *ngIf="submitted && f.password.errors " class="invalid-feedBack ">
+                <div *ngIf="f.password.errors.required ">Password is required</div>
+                <div style="color:red; " *ngIf="f.password.errors.minlength ">password should be 4 length</div>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="exampleInputPassword1 ">Email</label>
+            <input type="email " class="form-control " placeholder="enter the email " name="email " formControlName='email' [ngClass]="{ 'is-invalid' :submitted && f.email.errors} ">
+            <div *ngIf="submitted && f.email.errors " class="invalid-feedBack ">
+                <div *ngIf="f.email.errors.required ">email is required</div>
+                <div style="color:red; " *ngIf="f.email.errors.email ">email must be valid email</div>
+
+            </div>
+        </div>
+        <button type="submit " class="btn btn-primary mb-4 ">Submit</button>
+        <button type="reset " class="btn btn-primary mb-4 " (click)="reset() ">Reset</button>
+    </form>
+</div>
+{{regGroup}}

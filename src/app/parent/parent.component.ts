@@ -1,5 +1,6 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-parent',
@@ -7,8 +8,17 @@ import { DataServiceService } from '../data-service.service';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit{
+id
+user
+  constructor(private neha:DataServiceService,actRoute:ActivatedRoute) {
 
-  constructor(private neha:DataServiceService) { }
+    actRoute.params.subscribe(data=>{
+     this.id= data.id
+    });
+    actRoute.queryParams.subscribe(data=>{
+      this.user=data;
+    });
+  }
   dataFromChild;
   //step 1 of Parent to child
   employee={
