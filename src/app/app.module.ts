@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,8 @@ import { RouterComponent } from './router/router.component';
 import { ActivatedRouterComponent } from './activated-router/activated-router.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RocketComponent } from './rocket/rocket.component';
+import { CustomPipe } from './custom.pipe';
 
 @NgModule({
   declarations: [
@@ -23,13 +26,16 @@ import { RegisterComponent } from './register/register.component';
     RouterComponent,
     ActivatedRouterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RocketComponent,
+    CustomPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [],

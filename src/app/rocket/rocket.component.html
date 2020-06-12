@@ -1,0 +1,16 @@
+<p>rocket works!</p>
+
+<button (click)="getData()">Get</button>
+<button (click)="postData()">Post</button>
+<button (click)="del()">Delete</button>
+
+
+<ul *ngFor="let user of employeeData">
+    <li> {{user.first_name}}</li>
+    <li><img src={{user.avatar}}></li>
+    <li>{{user.email}}</li>
+</ul>
+
+<h1>{{'priyanka' |uppercase}}</h1>
+<h2>{{'NEHA' | lowercase}}</h2>
+<h2>{{'abhishek'| custom}}</h2>
